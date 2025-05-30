@@ -14,7 +14,7 @@ If the user enters an invalid size or boolean for toasted, it could cause a cras
 
 🔹 Receipt File Path Handling
 
-Hardcoding the file path in Receiptmanager limits portability. Consider using a relative path or allowing user configuration.
+Hardcoding the file path in ReceiptManager limits portability. Consider using a relative path or allowing user configuration.
 
 🔹 Improve toString() Formatting
 

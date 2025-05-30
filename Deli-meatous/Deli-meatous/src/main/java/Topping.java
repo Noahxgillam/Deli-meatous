@@ -10,9 +10,11 @@ public class Topping {
     }
 
     public double getPrice() {
-        double basePrice = isPremium ? 1.00 : 0.00;
-        return isExtra ? basePrice * 1.5 : basePrice;
+    if(isPremium){
+    double basePrice = 1;
     }
+    else
+        double basePrice = 0;
 
     @Override
     public String toString() {

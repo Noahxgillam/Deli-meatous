@@ -10,9 +10,9 @@
 
         public double calculatePrice() {
             return switch (size) {
-                case SMALL -> 2.00;
-                case MEDIUM -> 2.50;
-                case LARGE -> 3.00;
+                case SMALL -> 2;
+                case MEDIUM -> 2.5;
+                case LARGE -> 3;
             };
         }
 

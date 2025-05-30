@@ -16,13 +16,16 @@ public class Sandwich {
 
     public double calculatePrice() {
         double basePrice = switch (size) {
-            case 4 -> 5.50;
-            case 8 -> 7.00;
-            case 12 -> 8.50;
-            default -> 0.0;
+            case 4 -> 5.5;
+            case 8 -> 7;
+            case 12 -> 8.5;
+            default -> 0;
         };
-        double toppingCost = toppings.stream().mapToDouble(Topping::getPrice).sum();
-        return basePrice + toppingCost;
+        double totalCost = basePrice;
+        for (Topping topping : toppings) {
+            totalCost = totalCost + topping.getPrice();
+        }
+        return totalCost;
     }
 
     @Override

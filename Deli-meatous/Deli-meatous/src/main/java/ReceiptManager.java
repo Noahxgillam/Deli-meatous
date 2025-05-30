@@ -3,9 +3,9 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Receiptmanager {
+public class ReceiptManager {
     public void generateReceipt(Order order) {
-        String filePath = "C:/Users/Student/pluralsight/LearnToCode_Capstones/Deli-meatous/Deli-meatous/src/main/java/Receipts";
+        String filePath = "src/main/resources/Receipts";
 
         String filename = filePath + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")) + ".txt";
 

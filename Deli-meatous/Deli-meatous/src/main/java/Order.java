@@ -25,9 +25,18 @@ public class Order {
     }
 
     public double calculateTotalPrice() {
-        double totalSandwiches = sandwiches.stream().mapToDouble(Sandwich::calculatePrice).sum();
-        double totalDrinks = drinks.stream().mapToDouble(Drink::calculatePrice).sum();
-        double totalChips = chips.size() * 1.50;
+        double totalSandwiches = 0;
+        for (Sandwich sandwich : sandwiches) {
+            totalSandwiches = totalSandwiches + sandwich.calculatePrice();
+        }
+
+        double totalDrinks = 0.0;
+        for (Drink drink : drinks) {
+            totalDrinks = totalDrinks + drink.calculatePrice();
+        }
+
+
+        double totalChips = chips.size() * 1.5;
         return totalSandwiches + totalDrinks + totalChips;
     }
 
@@ -38,6 +47,7 @@ public class Order {
     }
 
     public void saveReceipt() {
-        new Receiptmanager().generateReceipt(this);
+        ReceiptManager manager = new ReceiptManager();
+        manager.generateReceipt(this);
     }
 }
